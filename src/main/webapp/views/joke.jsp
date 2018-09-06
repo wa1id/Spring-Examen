@@ -6,18 +6,15 @@
 <head>
 <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
 
-<link rel='stylesheet' href='/resources/css/bootstrap.min.css'>
-<script type='text/javascript' src='/resources/js/app.js'></script>
 
 <title>Jokes</title>
 </head>
 
 <body>
 
-<div class='well'>
 <h1>Jokes</h1>
 <br/>
-<form method=POST action='joke' onsubmit='return validate()'>
+<form method=POST action='joke_post'>
 		<div class='form-group row'>
 		 	<div class='col-xs-4'>
 				<label for='firstName'>First Name : </label>
