@@ -18,6 +18,8 @@ import edu.ap.spring.jpa.JokeRepository;
 @Scope("session")
 public class JokeController {
 	
+	   @Autowired
+	   JokeRepository repository;
    
    public JokeController() {
    }
@@ -25,6 +27,13 @@ public class JokeController {
    @RequestMapping("/joke")
    public String joke() {
 	   return "joke";
+   }
+   
+   @RequestMapping("/list")
+   public String list(Model model) {
+	   model.addAttribute("jokes", repository.findAll());
+
+	   return "list";
    }
 		   
    @RequestMapping(value = "/joke_post", method = RequestMethod.POST)
@@ -49,8 +58,9 @@ public class JokeController {
 	            response.append(inputLine);
 	        }
 	        in.close();
-	        //return response.toString();
+
 	        model.addAttribute("res", response.toString());
+	        repository.save(new Joke(firstName, lastName, response.toString()));
 	        return "joke_post";
 		} 
 		catch (Exception e) {

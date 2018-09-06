@@ -30,6 +30,6 @@
 	    	
 		<input type=SUBMIT value='Send'>
 </form>
-
+<a href='/list'>in-memory jokes</a>
 </body>
 </html>

@@ -18,11 +18,15 @@ public class Joke {
 		@Column
 	    private String lastName;
 		
+		@Column
+	    private String joke;
+		
 	    public Joke() {}
 	    
-	    public Joke(String firstName, String lastName) {
+	    public Joke(String firstName, String lastName,  String joke) {
 		    	this.firstName = firstName;
 		    	this.lastName = lastName;
+		    	this.joke = joke;
 	    }
 	    
 	    public String getFirstName() {
@@ -39,6 +43,14 @@ public class Joke {
 
 		public void setLastName(String lastName) {
 			this.lastName = lastName;
+		}
+		
+		public String getJoke() {
+			return joke;
+		}
+
+		public void setJoke(String joke) {
+			this.joke = joke;
 		}
 
 }
